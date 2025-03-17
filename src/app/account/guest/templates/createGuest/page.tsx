@@ -1,3 +1,5 @@
+"use client";
+
 import { useState } from "react";
 
 export default function Signup() {
@@ -10,11 +12,11 @@ export default function Signup() {
   });
   const [error, setError] = useState("");
 
-  const handleChange = (e) => {
+  const handleChange = (e: any) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: any) => {
     e.preventDefault();
     if (form.password !== form.confirmPassword) {
       setError("Passwords do not match");

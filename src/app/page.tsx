@@ -70,7 +70,7 @@ export default function LoginPage() {
           </form>
 
         <div className="mt-4 text-center">
-          <Link href="/account/guest/tempates/create_guest" className="text-blue-600 hover:underline">
+          <Link href="/account/guest/templates/createGuest" className="text-blue-600 hover:underline">
             Don't have an account?
           </Link>
           <br />
