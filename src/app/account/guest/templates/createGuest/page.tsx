@@ -1,22 +1,25 @@
 "use client";
 
 import { useState } from "react";
+import axios from "axios";
 
 export default function Signup() {
-  const [form, setForm] = useState({
+
+    const [form, setForm] = useState({
     user_id: "",
     email: "",
     password: "",
     confirmPassword: "",
     name: "",
   });
+
   const [error, setError] = useState("");
 
   const handleChange = (e: any) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e: any) => {
+  const handleSubmit = async (e: any) => {
     e.preventDefault();
     if (form.password !== form.confirmPassword) {
       setError("Passwords do not match");
@@ -27,8 +30,27 @@ export default function Signup() {
       return;
     }
     setError("");
+
+
     console.log("Form submitted", form);
+
+    try {
+      const response = await axios.post("http://localhost:8000/api/customer/create", {
+        user_id: form.user_id,
+        email: form.email,
+        password: form.password,
+        name: form.name,
+      });
+
+      // 성공 메시지 설정
+      console.log("Signup success:", response.data);
+    } catch (err: any) {
+      setError("Signup failed. Please try again.");
+      console.error("Signup error:", err.response?.data || err.message);
+    }
   };
+
+
 
   return (
     <div className="flex justify-center items-center h-screen bg-gray-100">

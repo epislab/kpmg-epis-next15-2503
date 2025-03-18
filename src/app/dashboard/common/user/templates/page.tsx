@@ -9,8 +9,8 @@ interface Customer {
 
 export default async function UserPage () {
 
-  const res = await fetch('http://localhost:8000/customer/list', {
-    cache: 'no-store', // SSR을 위해 매 요청마다 새로운 데이터 가져옴
+  const res = await fetch('http://localhost:8000/api/customer/list', {
+    cache: 'no-store', 
   });
 
   if (!res.ok) {
