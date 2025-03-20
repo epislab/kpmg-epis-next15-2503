@@ -14,10 +14,15 @@ export default function CompanySearchPage() {
 
   return (
     <div className="w-full">
-      {/* 회사 검색 헤드패널 (Thymeleaf 대체) */}
-      <div className="bg-gray-200 p-4 rounded shadow">
-        <h2 className="text-lg font-bold">Company Search</h2>
-      </div>
+      <div className="bg-gray-200 p-4 rounded shadow flex justify-between items-center">
+  <h2 className="text-lg font-bold">Company Search</h2>
+
+  <div>
+    <Link href="/auth/login" className="text-blue-500 no-underline hover:underline mr-4">로그인</Link>
+    <Link href="/auth/signup" className="text-blue-500 no-underline hover:underline">회원가입</Link>
+  </div>
+</div>
+
 
       <main className=" mt-6 flex flex-col items-center">
         <section className="scrollable-section w-full max-w-lg p-4">
