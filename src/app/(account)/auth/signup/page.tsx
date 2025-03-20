@@ -11,7 +11,7 @@ export default function Signup() {
         <h2 className="text-2xl font-bold text-center mb-4">Sign Up</h2>
         <SignupForm />
         <p className="text-center text-sm text-gray-600 mt-4">
-          Already have an account? <a href="/login" className="text-blue-500">Log in</a>
+          Already have an account? <a href="/auth/login" className="text-blue-500">Log in</a>
         </p>
       </div>
     </div>

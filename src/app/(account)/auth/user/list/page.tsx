@@ -22,6 +22,7 @@ export default async function UserPage () {
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 p-4">
+      
       <h3 className="text-4xl font-bold text-blue-500 mb-6">사용자 목록</h3>
 
       <div className="w-full max-w-4xl">
