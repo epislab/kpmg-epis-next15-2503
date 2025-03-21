@@ -1,4 +1,4 @@
-import SignupForm from "@/components/(account)/auth/signup/SignupForm";
+import SignupForm from "@/components/(account)/auth/user/signup/SignupForm";
 
 
 
