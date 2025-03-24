@@ -1,3 +1,5 @@
+
+"use client";
 import { useState } from "react";
 import axios from "axios";
 
@@ -17,6 +19,7 @@ export default function useSignupForm() {
     confirmPassword: "",
     name: "",
   });
+
 
   const [error, setError] = useState<string>("");
 

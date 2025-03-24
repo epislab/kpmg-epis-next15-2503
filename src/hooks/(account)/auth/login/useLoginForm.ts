@@ -1,6 +1,6 @@
 import { useState } from "react";
 import api from '@/lib/axios'
-import { useAuthStore } from "@/store/authStore";
+import { useUserStore } from "@/store/account/auth/user/store";
 
 interface LoginFormState {
   email: string;
@@ -32,7 +32,7 @@ export default function useLoginForm() {
     console.log("로그인 요청", form);
 
     try {
-      const response = await api.post('/auth/login', {
+      const response = await api.post('/api/auth/user/login', {
         email: form.email,
         password: form.password
       });
@@ -40,7 +40,7 @@ export default function useLoginForm() {
       
       console.log("로그인 성공", response.data);
       const token = response.data.accessToken
-      useAuthStore.getState().setAccessToken(token)
+      // useAuthStore.getState().setAccessToken(token)
       return true;
     } catch (err: any) {
       setError("로그인 실패. 다시 시도해주세요.");

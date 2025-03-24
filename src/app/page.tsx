@@ -18,8 +18,9 @@ export default function CompanySearchPage() {
   <h2 className="text-lg font-bold">Company Search</h2>
 
   <div>
-    <Link href="/auth/login" className="text-blue-500 no-underline hover:underline mr-4">로그인</Link>
-    <Link href="/auth/signup" className="text-blue-500 no-underline hover:underline">회원가입</Link>
+    <Link href="/user/login" className="text-blue-500 no-underline hover:underline mr-4">로그인</Link>
+    <Link href="/user/signup" className="text-blue-500 no-underline hover:underline">회원가입</Link>
+    <Link href="/customer/list" className="text-blue-500 no-underline hover:underline">테스트</Link>
   </div>
 </div>
 
