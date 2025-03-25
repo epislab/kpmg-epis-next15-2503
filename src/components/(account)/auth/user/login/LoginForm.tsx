@@ -36,7 +36,8 @@ export default function LoginForm() {
     //   router.push("/auth/user/list"); // 로그인 성공 시 이동
     // }
     console.log("로그인 성공:", isSuccess);
-    router.push("/auth/user/list");
+    alert("😁😁😁😁😁😁 로그인 성공");
+    // router.push("/auth/user/list");
   };
 
   return (

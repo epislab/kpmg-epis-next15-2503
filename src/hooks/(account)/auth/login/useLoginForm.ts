@@ -32,7 +32,7 @@ export default function useLoginForm() {
     console.log("로그인 요청", form);
 
     try {
-      const response = await api.post('/api/auth/user/login', {
+      const response = await api.post('/api/user/login', {
         email: form.email,
         password: form.password
       });
