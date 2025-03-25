@@ -1,7 +1,7 @@
 "use client";
 
 import SignupForm from "@/components/(account)/auth/user/signup/SignupForm";
-export const dynamic = "force-dynamic";
+
 
 
 export default function Signup() {
