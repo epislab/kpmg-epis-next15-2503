@@ -2,6 +2,8 @@ import { useState } from "react";
 import api from '@/lib/axios'
 import { useUserStore } from "@/store/account/auth/user/store";
 import { useRouter } from "next/navigation";
+import { setAccessToken } from '@/lib/authToken'
+
 interface LoginFormState {
   email: string;
   password: string;
@@ -41,20 +43,30 @@ export default function useLoginForm() {
         password: form.password
       });
       
+    // 백엔드 서비스에서 부터 라우터를 거쳐서 받은 데이터 
+    //   {
+    //     "message": "로그인 성공입니다",
+    //     "logged_in_user": logged_in_user,
+    //     "access_token": access_token,
+    //     "refresh_token": refresh_token
+    // }
       
       console.log("로그인 성공", response.data);
 
       const message = response.data.message;
-      const user = response.data.logged_in_user;
+      const logged_in_user = response.data.logged_in_user;
+      const access_token = response.data.access_token;
+      setAccessToken(access_token)
+      const refresh_token = response.data.refresh_token;
 
         // ✅ zustand store에서 setUser 가져오기
       const setUser = useUserStore((state) => state.setUser);
 
       // ✅ 사용자 정보 상태 저장
       setUser({
-        user_id: user.user_id,
-        email: user.email,
-        name: user.name,
+        user_id: logged_in_user.user_id,
+        email: logged_in_user.email,
+        name: logged_in_user.name,
       });
 
       if (message === "로그인에 성공했습니다") {
