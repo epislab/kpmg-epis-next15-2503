@@ -1,7 +1,7 @@
 "use client";
 export const dynamic = "force-dynamic"
 // 클라이언트 컴포넌트로 선언
-import SignupForm from "@/components/(account)/auth/user/signup/SignupForm";
+import SignupForm from "@/features/(account)/(auth)/user/components/SignupForm";
 
 
 

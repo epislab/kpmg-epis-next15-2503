@@ -1,6 +1,6 @@
 "use client";
 
-import useSignupForm from "@/hooks/(account)/auth/signup/useSignupForm";
+import useSignupForm from "@/features/(account)/(auth)/user/hooks/useSignupForm";
 
 
 

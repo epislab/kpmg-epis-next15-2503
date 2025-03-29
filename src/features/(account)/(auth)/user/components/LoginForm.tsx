@@ -1,6 +1,6 @@
 "use client";
 
-import useLoginForm from "@/hooks/(account)/auth/login/useLoginForm";
+import useLoginForm from "@/features/(account)/(auth)/user/hooks/useLoginForm";
 import { useRouter } from "next/navigation";
 
 interface InputFieldProps {
